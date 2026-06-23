@@ -1,20 +1,20 @@
 #![no_std]
 #![no_main]
 
+mod vga_buffer;
+
 use core::panic::PanicInfo;
 
 #[unsafe(no_mangle)]
 pub extern "C" fn _start() -> ! {
-    let message = b"Hello World from Convoi";
+    println!("Hello World van Convoi");
 
-    let vga_buffer = 0xb8000 as *mut u8;
+    let kernel_version = 0.00.01;
+    println!("Kernel versie: {}", kernel_version);
 
-    for (i, &byte) in message.iter().enumerate() {
-        unsafe {
-            *vga_buffer.offset(i as isize * 2) = byte;
-            *vga_buffer.offset(i as isize * 2 + 1) = 0x0f;
-        }
-    }
+    let x = 20;
+    let y = 22;
+    println!("Small calculation: {} + {} = {}", x, y, x + y);
 
     loop {}
 }
