@@ -47,3 +47,7 @@ Rust-based Operating System. Focus: RAM optimization, privacy, customizability.
 ## 📖 Documentation & Resources
 - Core Guide: os.phil-opp.com
 - Rust Embedded: rust-embedded.github.io/book
+
+
+<!-- Run using `cargo bootimage` -->
+<!-- Run for Toon `qemu-system-x86_64 -drive format=raw,file="$BOOTIMAGE" -display curses` -->
